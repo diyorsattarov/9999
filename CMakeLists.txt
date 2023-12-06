@@ -5,7 +5,6 @@ project(${PROJECT_NAME})
 
 add_subdirectory(src)
 
-# Include directories for your project
 include_directories(include)
 
 set(SOURCES

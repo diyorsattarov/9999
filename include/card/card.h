@@ -15,4 +15,6 @@ public:
     Card(CardValue value, CardSuit suit);
     CardValue getValue() const;
     CardSuit getSuit() const;
+    bool operator==(const Card& other) const;
+    bool operator!=(const Card& other) const;
 };

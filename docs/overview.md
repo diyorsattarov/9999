@@ -7,8 +7,8 @@ This project is the implementation of the card game blackjack
 
 ## Abstraction
 ### class Card
-- Card Value
-- Card Suit
+- Card Value (Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace)
+- Card Suit (Hearts, Diamonds, Clubs, Spades)
 
 ### class Deck
 - vector<Card>
