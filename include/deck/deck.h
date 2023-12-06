@@ -6,5 +6,5 @@ private:
     std::vector<Card> cards;
 public:
     Deck();
-    int getSize();
+    int getSize() const;
 };

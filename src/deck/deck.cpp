@@ -8,6 +8,6 @@ Deck::Deck() {
     }
 }
 
-int Deck::getSize() {
+int Deck::getSize() const {
     return cards.size();
 }
