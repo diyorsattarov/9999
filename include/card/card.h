@@ -1,4 +1,6 @@
-
+#pragma once
+#ifndef CARD_H
+#define CARD_H
 enum class CardValue {
     Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
 };
@@ -18,3 +20,4 @@ public:
     bool operator==(const Card& other) const;
     bool operator!=(const Card& other) const;
 };
+#endif
