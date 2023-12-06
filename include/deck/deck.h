@@ -7,4 +7,5 @@ private:
 public:
     Deck();
     int getSize() const;
+    const std::vector<Card>& getCards() const;
 };
