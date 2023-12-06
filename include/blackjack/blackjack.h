@@ -1,4 +1,6 @@
+#include <iostream>
 #include <vector>
+
 #include <deck/deck.h>
 #include <player/player.h>
 
@@ -10,4 +12,6 @@ public:
     Blackjack(int numDecks = 6);
     void shuffle();
     Card deal();
+    int getSize() const;
+    void printShoe() const;
 };
