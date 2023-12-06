@@ -22,3 +22,10 @@ add_library(player
 )
 
 target_include_directories(player PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_library(blackjack
+    blackjack/blackjack.cpp
+    ../include/blackjack/blackjack.h
+)
+
+target_include_directories(blackjack PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
