@@ -18,6 +18,7 @@ add_executable(tests
     ${SOURCES}
     tests/card/test_card.cpp
     tests/deck/test_deck.cpp
+    tests/blackjack/test_blackjack.cpp
 )
 
 find_package(GTest REQUIRED)
