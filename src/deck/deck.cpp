@@ -11,3 +11,7 @@ Deck::Deck() {
 int Deck::getSize() const {
     return cards.size();
 }
+
+const std::vector<Card>& Deck::getCards() const {
+    return cards;
+}
