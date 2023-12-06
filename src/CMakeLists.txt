@@ -6,3 +6,12 @@ add_library(card
 
 # Include directories for card
 target_include_directories(card PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+# Create a library target for deck
+add_library(deck
+    deck/deck.cpp
+    ../include/deck/deck.h
+)
+
+# Include directories for deck
+target_include_directories(deck PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

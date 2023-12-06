@@ -33,9 +33,9 @@ TEST_F(CardTest, InequalityOperator) {
     EXPECT_NE(card1, card2);
 }
 
-// TEST_F(CardTest, HighestValues) {
-//     Card card(CardValue::Ace, CardSuit::Spades);
+TEST_F(CardTest, HighestValues) {
+    Card card(CardValue::Ace, CardSuit::Spades);
 
-//     EXPECT_EQ(card.getValue(), CardValue::Ace);
-//     EXPECT_EQ(card.getSuit(), CardSuit::Spades);
-// }
+    EXPECT_EQ(card.getValue(), CardValue::Ace);
+    EXPECT_EQ(card.getSuit(), CardSuit::Spades);
+}
