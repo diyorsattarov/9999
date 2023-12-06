@@ -9,11 +9,15 @@ include_directories(include)
 
 set(SOURCES
     src/card/card.cpp
+    src/deck/deck.cpp
+    src/player/player.cpp
+    src/blackjack/blackjack.cpp
 )
 
 add_executable(tests
     ${SOURCES}
     tests/card/test_card.cpp
+    tests/deck/test_deck.cpp
 )
 
 find_package(GTest REQUIRED)

@@ -11,4 +11,11 @@ This project is the implementation of the card game blackjack
 - Card Suit (Hearts, Diamonds, Clubs, Spades)
 
 ### class Deck
-- vector<Card>
+- vector Card
+
+### class Player
+- vector Card
+
+### class Blackjack
+- vector Deck
+- vector Player

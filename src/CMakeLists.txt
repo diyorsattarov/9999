@@ -15,3 +15,10 @@ add_library(deck
 
 # Include directories for deck
 target_include_directories(deck PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_library(player
+    player/player.cpp
+    ../include/player/player.h
+)
+
+target_include_directories(player PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

@@ -2,8 +2,12 @@
 
 Deck::Deck() {
     for (int suit = 0; suit < 4; ++suit) {
-        for(int value = 0; value < 13, ++value) {
+        for(int value = 0; value < 13; ++value) {
             cards.emplace_back(static_cast<CardValue>(value), static_cast<CardSuit>(suit));
         }
     }
+}
+
+int Deck::getSize() {
+    return cards.size();
 }
