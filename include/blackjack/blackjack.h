@@ -1,3 +1,7 @@
+#pragma once
+#ifndef BLACKJACK_H
+#define BLACKJACK_H
+
 #include <iostream>
 #include <vector>
 #include <player/player.h>
@@ -15,4 +19,5 @@ public:
     void printShoe() const;
     bool addPlayer(const Player& player);
     bool removePlayer(int playerId);
-};  
+};
+#endif //BLACKJACK_H
