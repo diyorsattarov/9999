@@ -51,21 +51,15 @@ int Blackjack::getPlayerCt() const {
 void Blackjack::printShoe() const {
     int cardCount = 0;
 
-    std::cout << std::setw(15) << std::left << "Card Number" << std::setw(20) << std::left << "Card" << std::endl;
-    std::cout << std::setw(40) << std::setfill('-') << "" << std::setfill(' ') << std::endl;
+    Utilities::logger->info("{:<15}{:<20}", "Card Number", "Card");
+    Utilities::logger->info("{:<40}", std::string(40, '-'));
 
     for (const auto& card : shoe) {
-        // Print each card's value and suit
-        std::cout << std::setw(15) << std::left << cardCount++ << std::setw(20) << std::left
-                  << Utilities::cardValueToString(card.getValue()) + " of " + Utilities::cardSuitToString(card.getSuit());
-
-        // Print a new line for every 2 cards for better readability
-        if (cardCount % 2 == 0) {
-            std::cout << std::endl;
-        }
+        Utilities::logger->info("{:<15}{:<20}", cardCount++, Utilities::cardValueToString(card.getValue()) +
+                                                        " of " + Utilities::cardSuitToString(card.getSuit()));
     }
 
-    std::cout << std::endl;
+    Utilities::logger->info("");  // Add a new line at the end
 }
 
 bool Blackjack::addPlayer(const Player& player) {

@@ -30,3 +30,7 @@ std::string Utilities::cardSuitToString(CardSuit suit) {
         default: return "Unknown";
     }
 }
+
+std::shared_ptr<spdlog::logger> Utilities::logger = spdlog::stdout_color_mt("logger");  // Change to stdout_color_mt
+static auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("logfile.txt");
+static auto combined_logger = std::make_shared<spdlog::logger>("combined", spdlog::sinks_init_list({file_sink}));

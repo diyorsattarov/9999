@@ -27,8 +27,9 @@ add_executable(tests
 )
 
 find_package(GTest REQUIRED)
+find_package(spdlog REQUIRED)
 
 target_include_directories(tests PRIVATE ${GTEST_INCLUDE_DIRS})
-target_link_libraries(tests PRIVATE ${GTEST_BOTH_LIBRARIES} pthread)
+target_link_libraries(tests PRIVATE ${GTEST_BOTH_LIBRARIES} pthread spdlog::spdlog)
 
 add_custom_target(run_tests COMMAND tests)

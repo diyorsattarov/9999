@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <game/game.h>
 #include <player/player.h>
+#include <utilities/utilities.h>
 
 class GameTest : public ::testing::Test {
 protected:
