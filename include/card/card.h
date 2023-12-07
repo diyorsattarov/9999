@@ -14,6 +14,7 @@ class Card {
 private:
     CardValue value;
     CardSuit suit;
+    bool faceUp;
 public:
     Card(CardValue value, CardSuit suit);
     CardValue getValue() const;

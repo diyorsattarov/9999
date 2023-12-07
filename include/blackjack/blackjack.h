@@ -1,8 +1,11 @@
+#pragma once
+#ifndef BLACKJACK_H
+#define BLACKJACK_H
+
 #include <iostream>
 #include <vector>
-
-#include <deck/deck.h>
 #include <player/player.h>
+#include <utilities/utilities.h>
 
 class Blackjack {
 private:
@@ -13,5 +16,11 @@ public:
     void shuffle();
     Card deal();
     int getSize() const;
+    int getPlayerCt() const;
     void printShoe() const;
-};  
+    bool addPlayer(const Player& player);
+    bool removePlayer(int playerId);
+
+    std::vector<Player>& getPlayers();
+};
+#endif //BLACKJACK_H
