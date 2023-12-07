@@ -1,6 +1,6 @@
-# Project Name
+# cpp-blackjack
 
-Short description of your project.
+cpp-blackjack is a C++ project that implements the classic card game Blackjack. The project focuses on creating a flexible and extensible structure for simulating Blackjack gameplay, with an emphasis on modularity and readability.
 
 ## Table of Contents
 
@@ -18,12 +18,11 @@ Short description of your project.
 
 ## Introduction
 
-A brief introduction to your project. Explain what your project does and why it's useful.
 
 ## Getting Started
 
 ```
-git clone https://github.com/diyooor/cpp-cmake-template.git
+git clone https://github.com/diyooor/cpp-blackjack.git
 ```
 
 ### Prerequisites
@@ -56,7 +55,10 @@ ninja tests
 
 ## Features
 
-List the main features of your project. You can also include a roadmap for future features.
+- Deck Management: The project includes a robust implementation of a deck management system, allowing for the creation and manipulation of multiple decks of standard playing cards.
+- Player Interaction: Players can be easily added and managed within the game. The system supports player actions such as receiving cards, making bets, and deciding whether to hit or stand.
+- Game Logic: The core logic of Blackjack, including dealing cards, scoring hands, and determining winners and losers, is implemented in a clean and modular fashion.
+- Shuffling Algorithm: A shuffling algorithm is integrated to randomize the order of cards in the deck, providing a realistic and unpredictable gaming experience.
 
 ## Contributing
 
