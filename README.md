@@ -67,5 +67,3 @@ ninja tests
 This project is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
-
-Mention any third-party libraries, tools, or resources that you used or were inspired by in your project.
