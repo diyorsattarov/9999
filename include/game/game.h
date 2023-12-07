@@ -1,3 +1,7 @@
+#pragma once
+#ifndef GAME_H
+#define GAME_H
+
 #include <blackjack/blackjack.h>
 
 class Game : public Blackjack {
@@ -8,3 +12,4 @@ public:
     void playRound();
     void endGame();
 };
+#endif //GAME_H
