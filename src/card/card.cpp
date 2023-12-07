@@ -23,3 +23,4 @@ bool Card::operator==(const Card& other) const {
 bool Card::operator!=(const Card& other) const {
     return !(*this == other);
 }
+

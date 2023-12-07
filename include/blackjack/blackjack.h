@@ -6,7 +6,7 @@
 
 class Blackjack {
 private:
-    std::vector<Deck> shoe;
+    std::vector<Card> shoe;
     std::vector<Player> players;
 public: 
     Blackjack(int numDecks = 6);
