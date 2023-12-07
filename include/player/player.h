@@ -1,3 +1,7 @@
+#pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include <vector>
 #include <card/card.h>
 
@@ -12,3 +16,4 @@ public:
     int getBalance();
     int getPlayerId() const;
 };
+#endif // PLAYER_H
