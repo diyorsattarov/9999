@@ -4,12 +4,11 @@
 #include <random>
 #include <chrono>
 
-
 #include <blackjack/blackjack.h>
 
 Blackjack::Blackjack(int numDecks) {
     numDecks = std::max(numDecks, 1);
-
+    // load shoe vector with cards
     for (int i = 0; i < numDecks; ++i) {
         for (int suit = 0; suit < static_cast<int>(CardSuit::Spades) + 1; ++suit) {
             for (int value = 0; value < static_cast<int>(CardValue::Ace) + 1; ++value) {

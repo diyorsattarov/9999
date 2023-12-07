@@ -1,7 +1,5 @@
 #include <iostream>
 #include <vector>
-
-#include <deck/deck.h>
 #include <player/player.h>
 
 class Blackjack {
