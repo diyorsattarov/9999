@@ -37,5 +37,4 @@ todo:
 - game logic
 - player logic
 - monetary logic
-
-
+- logging 
