@@ -38,3 +38,36 @@ todo:
 - player logic
 - monetary logic
 - logging 
+
+## Project Directory Structure
+```
+cpp-blackjack/
+|-- build/
+|-- include/
+|   |-- blackjack/
+|   |   |-- blackjack.h
+|   |-- card/
+|   |   |-- card.h
+|   |-- game/
+|   |   |-- game.h
+|   |-- player/
+|   |   |-- player.h
+|   |-- utilities/
+|       |-- utilities.h
+|-- src/
+|   |-- blackjack/
+|   |   |-- blackjack.cpp
+|   |-- card/
+|   |   |-- card.cpp
+|   |-- game/
+|   |   |-- game.cpp
+|   |-- player/
+|   |   |-- player.cpp
+|   |-- utilities/
+|       |-- utilities.cpp
+|-- tests/
+|   |-- test_blackjack.cpp
+|   |-- test_game.cpp
+|   |-- test_player.cpp
+|-- CMakeLists.txt
+```
