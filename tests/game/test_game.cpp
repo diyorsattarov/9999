@@ -22,4 +22,17 @@ TEST_F(GameTest, GameMethodsTest) {
     ASSERT_TRUE(game.addPlayer(firstPlayer));
     ASSERT_TRUE(game.addPlayer(secondPlayer));
     ASSERT_EQ(game.getPlayerCt(), 2);
+    Player thirdPlayer(2);
+    Player fourthPlayer(3);
+    Player fifthPlayer(4);
+    Player sixthPlayer(5);
+    Player seventhPlayer(6);
+    Player eighthPlayer(7);
+    game.addPlayer(thirdPlayer);
+    game.addPlayer(fourthPlayer);
+    game.addPlayer(fifthPlayer);
+    game.addPlayer(sixthPlayer);
+    game.addPlayer(seventhPlayer);
+    std::cout << game.getPlayerCt() << std::endl;
+    ASSERT_FALSE(game.addPlayer(eighthPlayer));
 }
