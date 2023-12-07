@@ -43,3 +43,10 @@ add_library(dealer
 )
 
 target_include_directories(dealer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_library(utilities
+    utilities/utilities.cpp
+    ../include/utilities/utilities.h
+)
+
+target_include_directories(utilities PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
