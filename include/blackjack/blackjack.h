@@ -14,4 +14,4 @@ public:
     Card deal();
     int getSize() const;
     void printShoe() const;
-};
+};  

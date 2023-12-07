@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include <card/card.h>
 
 Card::Card(CardValue value, CardSuit suit) : value(value), suit(suit) {}

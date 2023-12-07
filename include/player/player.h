@@ -5,5 +5,5 @@ class Player {
 private:
     std::vector<Card> hand;
 public:
-
+    
 };
