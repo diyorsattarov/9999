@@ -12,6 +12,7 @@ set(SOURCES
     src/deck/deck.cpp
     src/player/player.cpp
     src/blackjack/blackjack.cpp
+    src/game/game.cpp
 )
 
 add_executable(tests
@@ -20,6 +21,7 @@ add_executable(tests
     tests/deck/test_deck.cpp
     tests/blackjack/test_blackjack.cpp
     tests/player/test_player.cpp
+    tests/game/test_game.cpp
 )
 
 find_package(GTest REQUIRED)
