@@ -1,5 +1,11 @@
 #include <utilities/utilities.h>
 
+void Utilities::clearLogFile(const std::string& filename) {
+    std::ofstream file(filename, std::ofstream::out | std::ofstream::trunc);
+    file.close();
+}
+
+
 // Helper function to convert CardValue to string
 std::string Utilities::cardValueToString(CardValue value) {
     switch (value) {
@@ -33,4 +39,17 @@ std::string Utilities::cardSuitToString(CardSuit suit) {
 
 std::shared_ptr<spdlog::logger> Utilities::logger = spdlog::stdout_color_mt("logger");  // Change to stdout_color_mt
 static auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("logfile.txt");
-static auto combined_logger = std::make_shared<spdlog::logger>("combined", spdlog::sinks_init_list({file_sink}));
+std::shared_ptr<spdlog::logger> Utilities::combined_logger = std::make_shared<spdlog::logger>(
+    "combined",
+    spdlog::sinks_init_list{
+        std::make_shared<spdlog::sinks::stdout_color_sink_mt>(),
+        file_sink
+    }
+);
+
+std::shared_ptr<spdlog::logger> Utilities::file_logger = std::make_shared<spdlog::logger>(
+    "file_logger",
+    spdlog::sinks_init_list{
+        std::make_shared<spdlog::sinks::basic_file_sink_mt>("logfile.txt")
+    }
+);
