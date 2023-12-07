@@ -35,4 +35,6 @@ TEST_F(GameTest, GameMethodsTest) {
     game.addPlayer(seventhPlayer);
     std::cout << game.getPlayerCt() << std::endl;
     ASSERT_FALSE(game.addPlayer(eighthPlayer));
+    game.startGame();
+    game.printShoe();
 }

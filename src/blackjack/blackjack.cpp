@@ -6,9 +6,11 @@
 
 #include <blackjack/blackjack.h>
 
+// Blackjack class implementation
+
 Blackjack::Blackjack(int numDecks) {
     numDecks = std::max(numDecks, 1);
-    // load shoe vector with cards
+    // Load shoe vector with cards
     for (int i = 0; i < numDecks; ++i) {
         for (int suit = 0; suit < static_cast<int>(CardSuit::Spades) + 1; ++suit) {
             for (int value = 0; value < static_cast<int>(CardValue::Ace) + 1; ++value) {
@@ -17,6 +19,16 @@ Blackjack::Blackjack(int numDecks) {
         }
     }
     shuffle();
+}
+
+Card Blackjack::deal() {
+    if (shoe.empty()) {
+        shuffle();
+    }
+
+    Card dealtCard = shoe.back();
+    shoe.pop_back();
+    return dealtCard;
 }
 
 void Blackjack::shuffle() {
@@ -36,36 +48,6 @@ int Blackjack::getPlayerCt() const {
     return players.size();
 }
 
-std::string cardValueToString(CardValue value) {
-    switch (value) {
-        case CardValue::Two: return "Two";
-        case CardValue::Three: return "Three";
-        case CardValue::Four: return "Four";
-        case CardValue::Five: return "Five";
-        case CardValue::Six: return "Six";
-        case CardValue::Seven: return "Seven";
-        case CardValue::Eight: return "Eight";
-        case CardValue::Nine: return "Nine";
-        case CardValue::Ten: return "Ten";
-        case CardValue::Jack: return "Jack";
-        case CardValue::Queen: return "Queen";
-        case CardValue::King: return "King";
-        case CardValue::Ace: return "Ace";
-        default: return "Unknown";
-    }
-}
-
-// Helper function to convert CardSuit to string
-std::string cardSuitToString(CardSuit suit) {
-    switch (suit) {
-        case CardSuit::Hearts: return "Hearts";
-        case CardSuit::Diamonds: return "Diamonds";
-        case CardSuit::Clubs: return "Clubs";
-        case CardSuit::Spades: return "Spades";
-        default: return "Unknown";
-    }
-}
-
 void Blackjack::printShoe() const {
     int cardCount = 0;
 
@@ -75,7 +57,7 @@ void Blackjack::printShoe() const {
     for (const auto& card : shoe) {
         // Print each card's value and suit
         std::cout << std::setw(15) << std::left << cardCount++ << std::setw(20) << std::left
-                  << cardValueToString(card.getValue()) + " of " + cardSuitToString(card.getSuit());
+                  << Utilities::cardValueToString(card.getValue()) + " of " + Utilities::cardSuitToString(card.getSuit());
 
         // Print a new line for every 2 cards for better readability
         if (cardCount % 2 == 0) {
@@ -107,4 +89,8 @@ bool Blackjack::removePlayer(int playerId) {
     }
 
     return false; // Player not found
+}
+
+std::vector<Player>& Blackjack::getPlayers() {
+    return players;
 }

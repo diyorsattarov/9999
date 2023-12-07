@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <player/player.h>
+#include <utilities/utilities.h>
 
 class Blackjack {
 private:
@@ -19,5 +20,7 @@ public:
     void printShoe() const;
     bool addPlayer(const Player& player);
     bool removePlayer(int playerId);
+
+    std::vector<Player>& getPlayers();
 };
 #endif //BLACKJACK_H

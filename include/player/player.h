@@ -13,7 +13,11 @@ private:
 public:
     Player(int pId);
 
+    void addCard(const Card& card);
+
     int getBalance();
     int getPlayerId() const;
+
+    void printHand();
 };
 #endif // PLAYER_H

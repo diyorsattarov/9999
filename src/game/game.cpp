@@ -14,9 +14,17 @@ void Game::startGame() {
      * - Previous game ends.
      * - Other specific conditions.
      */
+     // deal 1st card to dealer
+    std::vector<Player>& gamePlayers = getPlayers();
+    for (Player& player: gamePlayers) {
+        player.addCard(deal());
+    }
+    for (Player& player: gamePlayers) {
+        player.addCard(deal());
+    }
 }
 
-void Game::startRound() {
+void Game::playRound() {
     /*
      * Start of a new round:
      * - Initialization for player decisions.

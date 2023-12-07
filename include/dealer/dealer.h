@@ -7,9 +7,11 @@
 
 class Dealer {
 private:
+    int dealerId;
     std::vector<Card> hand;
 public:
-    
-}
+    Dealer(int dId);
+    void addCard(const Card& card);
+};
 
 #endif
