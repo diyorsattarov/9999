@@ -13,6 +13,7 @@ This project is the implementation of the card game blackjack
 - vector Card
 
 ### class Player
+- int playerId
 - vector Card
 
 ### class Blackjack
