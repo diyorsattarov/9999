@@ -8,6 +8,7 @@ protected:
 
 TEST_F(BlackjackTest, BlackjackShoeSize) {
     // Assuming a standard deck of 52 cards
-    Blackjack.printShoe();
-    ASSERT_EQ(blackjack.getSize(), 6);
+    blackjack.shuffle();
+    blackjack.printShoe();
+    ASSERT_EQ(blackjack.getSize(), 312);
 }
