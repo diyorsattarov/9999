@@ -87,7 +87,7 @@ void Blackjack::printShoe() const {
 }
 
 bool Blackjack::addPlayer(const Player& player) {
-    if (players.size() > 7) {
+    if (players.size() > 6) {
         return false;
     } else {
         players.push_back(player);
