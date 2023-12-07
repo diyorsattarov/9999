@@ -36,3 +36,10 @@ add_library(game
 )
 
 target_include_directories(game PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_library(dealer
+    dealer/dealer.cpp
+    ../include/dealer/dealer.h
+)
+
+target_include_directories(dealer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
