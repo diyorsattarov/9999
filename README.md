@@ -62,8 +62,6 @@ ninja tests
 
 ## Contributing
 
-Explain how others can contribute to your project. Include guidelines for submitting pull requests or reporting issues.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.md](LICENSE.md) file for details.
