@@ -34,8 +34,11 @@ TEST_F(GameTest, GameMethodsTest) {
     game.addPlayer(fifthPlayer);
     game.addPlayer(sixthPlayer);
     game.addPlayer(seventhPlayer);
-    std::cout << game.getPlayerCt() << std::endl;
     ASSERT_FALSE(game.addPlayer(eighthPlayer));
     game.startGame();
     game.printShoe();
+    const std::vector<Player>& players = game.getPlayers();
+    for (const Player& player : players) {
+        player.printHand();
+    }
 }

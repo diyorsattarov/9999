@@ -18,6 +18,6 @@ public:
     int getBalance();
     int getPlayerId() const;
 
-    void printHand();
+    void printHand() const;
 };
 #endif // PLAYER_H
