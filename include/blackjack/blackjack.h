@@ -11,5 +11,8 @@ public:
     void shuffle();
     Card deal();
     int getSize() const;
+    int getPlayerCt() const;
     void printShoe() const;
+    bool addPlayer(const Player& player);
+    bool removePlayer(int playerId);
 };  

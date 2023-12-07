@@ -16,6 +16,7 @@ Blackjack::Blackjack(int numDecks) {
             }
         }
     }
+    shuffle();
 }
 
 void Blackjack::shuffle() {
@@ -29,6 +30,10 @@ void Blackjack::shuffle() {
 
 int Blackjack::getSize() const {
     return shoe.size();
+}
+
+int Blackjack::getPlayerCt() const {
+    return players.size();
 }
 
 std::string cardValueToString(CardValue value) {
@@ -79,4 +84,27 @@ void Blackjack::printShoe() const {
     }
 
     std::cout << std::endl;
+}
+
+bool Blackjack::addPlayer(const Player& player) {
+    if (players.size() > 7) {
+        return false;
+    } else {
+        players.push_back(player);
+        return true;
+    }
+}
+
+bool Blackjack::removePlayer(int playerId) {
+    auto it = std::remove_if(players.begin(), players.end(),
+                             [playerId](const Player& player) {
+                                 return player.getPlayerId() == playerId;
+                             });
+
+    if (it != players.end()) {
+        players.erase(it, players.end());
+        return true; // Player successfully removed
+    }
+
+    return false; // Player not found
 }
