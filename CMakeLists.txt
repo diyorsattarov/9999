@@ -13,6 +13,7 @@ set(SOURCES
     src/player/player.cpp
     src/blackjack/blackjack.cpp
     src/game/game.cpp
+    src/dealer/dealer.cpp
 )
 
 add_executable(tests
