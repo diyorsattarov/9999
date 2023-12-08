@@ -6,7 +6,7 @@
 
 enum class PlayerDecision {
     Hit,
-    Stand, 
+    Stand,
     Split,
     Double,
     Surrender
@@ -14,7 +14,14 @@ enum class PlayerDecision {
 
 class Decision {
 public:
-    PlayerDecision getDecision(int playerTotal, int dealerUpCard);
+    PlayerDecision getDecision(const Player& player, int dealerUpCard);
+    int calculateHandTotal(const std::vector<Card>& hand);
+    bool containsAce(const std::vector<Card>& hand);
 private:
+    // Define combinations and their corresponding decisions
+    std::unordered_map<std::string, PlayerDecision> handDecisions;
+
+    // Method to check for specific hand combinations
+    PlayerDecision checkHand(const std::vector<Card>& playerHand, int dealerUpCard);
 };
 #endif //DECISION_H
