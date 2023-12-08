@@ -5,6 +5,10 @@ Player::Player(int pId) : playerId(pId), balance(0) {}
 
 int Player::getPlayerId() const { return playerId; }
 
+std::vector<Card> Player::getHand() const {
+    return hand;
+}
+
 void Player::addCard(const Card& card) {
     hand.push_back(card);
 }

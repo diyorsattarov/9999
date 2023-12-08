@@ -12,11 +12,11 @@ private:
 public:
     Player(int pId);
 
-    void addCard(const Card& card);
-
     int getBalance();
     int getPlayerId() const;
+    std::vector<Card> getHand() const;
 
+    void addCard(const Card& card);
     void printHand() const;
 };
 #endif // PLAYER_H
