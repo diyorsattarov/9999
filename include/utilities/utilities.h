@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include <unordered_map>
 
 #include <gtest/gtest.h>
 #include <spdlog/spdlog.h>
@@ -16,6 +17,7 @@
 #include <spdlog/sinks/basic_file_sink.h>
 
 #include <card/card.h>
+#include <player/player.h>
 
 class Utilities {
 public:
