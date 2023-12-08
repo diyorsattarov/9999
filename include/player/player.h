@@ -2,8 +2,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <vector>
-#include <card/card.h>
+#include <utilities/utilities.h>
 
 class Player {
 private:

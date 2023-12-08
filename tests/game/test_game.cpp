@@ -1,9 +1,9 @@
-#include <gtest/gtest.h>
-#include <game/game.h>
-#include <player/player.h>
 #include <utilities/utilities.h>
-
+#include <game/game.h>
 class GameTest : public ::testing::Test {
+    void SetUp() override {
+        Utilities::clearLogFile("logfile.txt");
+    }
 protected:
     Game game;
 };
@@ -36,7 +36,7 @@ TEST_F(GameTest, GameMethodsTest) {
     game.addPlayer(seventhPlayer);
     ASSERT_FALSE(game.addPlayer(eighthPlayer));
     game.startGame();
-    game.printShoe();
+    //game.printShoe();
     const std::vector<Player>& players = game.getPlayers();
     for (const Player& player : players) {
         player.printHand();

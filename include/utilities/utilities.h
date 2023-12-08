@@ -1,10 +1,20 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
+
 #include <fstream>
+#include <iostream>
 #include <string>
+#include <vector>
+#include <iomanip>
+#include <algorithm>
+#include <random>
+#include <chrono>
+
+#include <gtest/gtest.h>
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/sinks/basic_file_sink.h>
+
 #include <card/card.h>
 
 class Utilities {

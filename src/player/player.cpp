@@ -11,13 +11,13 @@ void Player::addCard(const Card& card) {
 
 void Player::printHand() const {
     // Use combined_logger for logging to both console and file
-    Utilities::combined_logger->info("Player {}'s Hand:", playerId);
+    Utilities::file_logger->info("Player {}'s Hand:", playerId);
 
     for (const auto& card : hand) {
-        Utilities::combined_logger->info("{} of {}", 
+        Utilities::file_logger->info("{} of {}", 
             Utilities::cardValueToString(card.getValue()), Utilities::cardSuitToString(card.getSuit())
         );
     }
 
-    Utilities::combined_logger->info("");  // Add a new line at the end
+    Utilities::file_logger->info("");  // Add a new line at the end
 }

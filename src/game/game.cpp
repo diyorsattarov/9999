@@ -14,14 +14,12 @@ void Game::startGame() {
      * - Previous game ends.
      * - Other specific conditions.
      */
-     // deal 1st card to dealer
+    dealer.addCard(deal());
     std::vector<Player>& gamePlayers = getPlayers();
-    for (Player& player: gamePlayers) {
-        player.addCard(deal());
-    }
-    for (Player& player: gamePlayers) {
-        player.addCard(deal());
-    }
+    for (Player& player: gamePlayers) player.addCard(deal());
+    for (Player& player: gamePlayers) player.addCard(deal());
+    dealer.addCard(deal());
+    dealer.printHand(); 
 }
 
 void Game::playRound() {

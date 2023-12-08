@@ -2,10 +2,9 @@
 #ifndef BLACKJACK_H
 #define BLACKJACK_H
 
-#include <iostream>
-#include <vector>
-#include <player/player.h>
 #include <utilities/utilities.h>
+#include <player/player.h>
+#include <dealer/dealer.h>
 
 class Blackjack {
 private:

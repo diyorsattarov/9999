@@ -9,7 +9,6 @@ include_directories(include)
 
 set(SOURCES
     src/card/card.cpp
-    src/deck/deck.cpp
     src/player/player.cpp
     src/blackjack/blackjack.cpp
     src/game/game.cpp
@@ -20,7 +19,6 @@ set(SOURCES
 add_executable(tests
     ${SOURCES}
     tests/card/test_card.cpp
-    tests/deck/test_deck.cpp
     tests/blackjack/test_blackjack.cpp
     tests/player/test_player.cpp
     tests/game/test_game.cpp

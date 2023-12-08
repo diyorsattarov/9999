@@ -1,9 +1,3 @@
-#include <iostream>
-#include <iomanip> // for std::setw
-#include <algorithm>
-#include <random>
-#include <chrono>
-
 #include <blackjack/blackjack.h>
 
 // Blackjack class implementation
@@ -50,7 +44,6 @@ int Blackjack::getPlayerCt() const {
 
 void Blackjack::printShoe() const {
     int cardCount = 0;
-    Utilities::clearLogFile("logfile.txt");
     Utilities::file_logger->info("{:<15}{:<20}", "Card Number", "Card");
     Utilities::file_logger->info("{:<40}", std::string(40, '-'));
 

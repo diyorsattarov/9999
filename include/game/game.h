@@ -5,6 +5,8 @@
 #include <blackjack/blackjack.h>
 
 class Game : public Blackjack {
+private:
+    Dealer dealer;
 public:
     Game(int numDecks = 6);
 
