@@ -6,10 +6,8 @@ int Decision::calculateHandTotal(const std::vector<Card>& hand) {
 
     for (const Card& card : hand) {
         int cardValue = static_cast<int>(card.getValue());
-        Utilities::logger->info("cardValue : {}", cardValue);
         // Handle Ace separately
         if (cardValue == 12) {  // Ace
-            Utilities::logger->info("found an ace");
             total += 11;
             numAces++;
         } else if (cardValue >= 9) {  // 10, Jack, Queen, King
@@ -57,6 +55,8 @@ PlayerDecision Decision::getDecision(const Player& player, int dealerUpCard) {
 
 PlayerDecision Decision::checkSoftHand(int total, int dealerUpCard) {
     switch (total) {
+        case 18:
+            return PlayerDecision::Stand;
         case 17:
             if (dealerUpCard >= 4 && dealerUpCard <= 6) {
                 return PlayerDecision::Double;
@@ -66,7 +66,7 @@ PlayerDecision Decision::checkSoftHand(int total, int dealerUpCard) {
         case 16:
             if (dealerUpCard >= 9) {
                 // surrender or hit
-                return PlayerDecision::Surrender
+                return PlayerDecision::Surrender;
             } else if (dealerUpCard >= 7){
                 return PlayerDecision::Hit;
             } else {
@@ -99,12 +99,10 @@ PlayerDecision Decision::checkSoftHand(int total, int dealerUpCard) {
 
 PlayerDecision Decision::checkHardHand(int total, int dealerUpCard) {
     switch (total) {
+        case 20:
+            return PlayerDecision::Stand;
         case 17:
-            if (dealerUpCard >= 4 && dealerUpCard <= 6) {
-                return PlayerDecision::Double;
-            } else {
-                return PlayerDecision::Hit;
-            }
+            return PlayerDecision::Stand;
         case 16:
         case 15:
         case 14:

@@ -22,11 +22,21 @@ TEST_F(DecisionTest, DecisionsTest) {
         dealer.clearHand();
         dealer.addCard(Card(static_cast<CardValue>(dealerCard), CardSuit::Spades));
         dealer.printHand();
+        // playerHand 8-17
+
         for (int playerCard = 0; playerCard <= 7; ++playerCard) {
             player.clearHand();
             player.addCard(Card(CardValue::Ace, CardSuit::Hearts));
             player.addCard(Card(static_cast<CardValue>(playerCard), CardSuit::Spades));
             player.printHand();
+            if(player.getHand().back().getValue() == CardValue::Eight) {
+                ASSERT_EQ(decision.getDecision(player, dealerCard), PlayerDecision::Stand);
+                Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
+                             Utilities::cardValueToString(player.getHand().front().getValue()),
+                             Utilities::cardValueToString(player.getHand().back().getValue()),
+                             Utilities::playerDecisionToString(decision.getDecision(player, dealerCard)));
+
+            }
         }
         // pairs
         for (int playerCard2 = 0; playerCard2 <= 12; ++playerCard2) {
@@ -37,6 +47,13 @@ TEST_F(DecisionTest, DecisionsTest) {
             player2.addCard(Card(static_cast<CardValue>(playerCard2), CardSuit::Spades));
             player2.addCard(Card(static_cast<CardValue>(playerCard2), CardSuit::Spades));
             player2.printHand();
+            if (player2.getHand().front().getValue() == CardValue::Ten) {
+                ASSERT_EQ(decision.getDecision(player2, dealerCard), PlayerDecision::Stand);
+                Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
+                             Utilities::cardValueToString(player2.getHand().front().getValue()),
+                             Utilities::cardValueToString(player2.getHand().back().getValue()),
+                             Utilities::playerDecisionToString(decision.getDecision(player2, dealerCard)));
+            }
 
         }
     }
