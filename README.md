@@ -61,6 +61,35 @@ ninja tests
 ```
 
 ## Demo
+### DecisionTest
+```
+[2023-12-09 10:33:08.895] [file_logger] [info] Dealer 1's Hand:
+[2023-12-09 10:33:08.895] [file_logger] [info] Two of Spades
+[2023-12-09 10:33:08.895] [file_logger] [info] 
+[2023-12-09 10:33:08.895] [file_logger] [info] Player 1's Hand:
+[2023-12-09 10:33:08.895] [file_logger] [info] Ace of Hearts
+[2023-12-09 10:33:08.895] [file_logger] [info] Two of Spades
+...
+[2023-12-09 10:33:08.895] [file_logger] [info] Player 2's Hand:
+[2023-12-09 10:33:08.895] [file_logger] [info] Ace of Spades
+[2023-12-09 10:33:08.895] [file_logger] [info] Ace of Spades
+[2023-12-09 10:33:08.895] [file_logger] [info] 
+[2023-12-09 10:33:08.895] [file_logger] [info] Dealer 1's Hand:
+[2023-12-09 10:33:08.895] [file_logger] [info] Six of Spades
+[2023-12-09 10:33:08.895] [file_logger] [info] 
+[2023-12-09 10:33:08.895] [file_logger] [info] Player 1's Hand:
+[2023-12-09 10:33:08.895] [file_logger] [info] Ace of Hearts
+[2023-12-09 10:33:08.895] [file_logger] [info] Two of Spades
+...
+[2023-12-09 10:33:08.896] [file_logger] [info] Dealer 1's Hand:
+[2023-12-09 10:33:08.896] [file_logger] [info] Ace of Spades
+[2023-12-09 10:33:08.896] [file_logger] [info] 
+[2023-12-09 10:33:08.896] [file_logger] [info] Player 1's Hand:
+[2023-12-09 10:33:08.896] [file_logger] [info] Ace of Hearts
+[2023-12-09 10:33:08.896] [file_logger] [info] Two of Spades
+```
+
+### CardTest, DeckTest (deprecated) BlacjackTest, PlayerTest, GameTest demo
 ```
 ➜  build git:(dev) ✗ ./tests
 Running main() from ./googletest/src/gtest_main.cc
