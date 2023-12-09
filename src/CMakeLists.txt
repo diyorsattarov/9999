@@ -41,3 +41,10 @@ add_library(utilities
 )
 
 target_include_directories(utilities PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_library(decision
+    decision/decision.cpp
+    ../include/decision/decision.h
+)
+
+target_include_directories(decision PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

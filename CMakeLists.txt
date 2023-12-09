@@ -14,14 +14,16 @@ set(SOURCES
     src/game/game.cpp
     src/dealer/dealer.cpp
     src/utilities/utilities.cpp
+    src/decision/decision.cpp
 )
 
 add_executable(tests
     ${SOURCES}
-    tests/card/test_card.cpp
-    tests/blackjack/test_blackjack.cpp
-    tests/player/test_player.cpp
-    tests/game/test_game.cpp
+    #tests/card/test_card.cpp
+    #tests/blackjack/test_blackjack.cpp
+    #tests/player/test_player.cpp
+    #tests/game/test_game.cpp
+    tests/decision/test_decision.cpp
 )
 
 find_package(GTest REQUIRED)

@@ -2,9 +2,12 @@
 
 Dealer::Dealer() {}
 
-bool Dealer::addCard(const Card& card) {
+void Dealer::addCard(const Card& card) {
     hand.push_back(card);
-    return true;
+}
+
+void Dealer::clearHand() {
+    hand.clear();
 }
 
 void Dealer::printHand() const {

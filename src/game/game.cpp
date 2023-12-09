@@ -14,20 +14,17 @@ void Game::startGame() {
      * - Previous game ends.
      * - Other specific conditions.
      */
-    dealer.addCard(deal());
-    std::vector<Player>& gamePlayers = getPlayers();
-    for (Player& player: gamePlayers) player.addCard(deal());
-    for (Player& player: gamePlayers) player.addCard(deal());
-    dealer.addCard(deal());
-    dealer.printHand(); 
+     playGame();
 }
 
-void Game::playRound() {
+void Game::playGame() {
     /*
      * Start of a new round:
      * - Initialization for player decisions.
      * - Starting from position 1, players make decisions: hit / stand / split / double / fold.
      */
+    dealInitialCards();
+    processPlayerDecisions();
 }
 
 void Game::endGame() {
@@ -38,4 +35,24 @@ void Game::endGame() {
      *
      * Additional details about handling winnings/losses or other relevant actions.
      */
+}
+
+void Game::dealInitialCards() {
+    dealer.addCard(deal());
+    std::vector<Player>& gamePlayers = getPlayers();
+    for (Player& player: gamePlayers) player.addCard(deal());
+    for (Player& player: gamePlayers) player.addCard(deal());
+    dealer.addCard(deal());
+    dealer.printHand();
+}
+
+void Game::processPlayerDecisions() {
+    const std::vector<Player>& players = this->getPlayers();
+    for (const Player& player : players) {
+        player.printHand();
+    }
+}
+
+void Game::processDealerTurn() {
+    
 }
