@@ -6,9 +6,10 @@ int Decision::calculateHandTotal(const std::vector<Card>& hand) {
 
     for (const Card& card : hand) {
         int cardValue = static_cast<int>(card.getValue());
-
+        Utilities::logger->info("cardValue : {}", cardValue);
         // Handle Ace separately
-        if (cardValue == 0) {  // Ace
+        if (cardValue == 12) {  // Ace
+            Utilities::logger->info("found an ace");
             total += 11;
             numAces++;
         } else if (cardValue >= 9) {  // 10, Jack, Queen, King
@@ -41,26 +42,10 @@ PlayerDecision Decision::checkHand(const std::vector<Card>& playerHand, int deal
     bool hasAce = containsAce(playerHand);
 
     if (hasAce) {
-        // Soft hand (Ace being counted as 11)
-        if (total == 17) {
-            // Soft 17
-            if (dealerUpCard >= 4 && dealerUpCard <= 6) {
-                return PlayerDecision::Double;
-            } else {
-                return PlayerDecision::Hit;
-            }
-        } else {
-            // Other soft hands logic can be added here
-        }
+        return checkSoftHand(total, dealerUpCard);
     } else {
-        // Hard hand
-        if (total >= 17) {
-            return PlayerDecision::Stand;
-        } else {
-            return PlayerDecision::Hit;
-        }
+        return checkHardHand(total, dealerUpCard);
     }
-    return PlayerDecision::Surrender;
 }
 
 
@@ -70,3 +55,78 @@ PlayerDecision Decision::getDecision(const Player& player, int dealerUpCard) {
     return checkHand(player.getHand(), dealerUpCard);
 }
 
+PlayerDecision Decision::checkSoftHand(int total, int dealerUpCard) {
+    switch (total) {
+        case 17:
+            if (dealerUpCard >= 4 && dealerUpCard <= 6) {
+                return PlayerDecision::Double;
+            } else {
+                return PlayerDecision::Hit;
+            }
+        case 16:
+            if (dealerUpCard >= 9) {
+                // surrender or hit
+                return PlayerDecision::Surrender
+            } else if (dealerUpCard >= 7){
+                return PlayerDecision::Hit;
+            } else {
+                return PlayerDecision::Stand;
+            }
+        case 15:
+        case 14:
+        case 13:
+        case 12:
+            return PlayerDecision::Hit;
+        case 11:
+            return PlayerDecision::Double;
+        case 10:
+        case 9:
+            if (dealerUpCard >= 2 && dealerUpCard <= 6) {
+                return PlayerDecision::Double;
+            } else {
+                return PlayerDecision::Hit;
+            }
+        case 8:
+            if (dealerUpCard == 5 || dealerUpCard == 6) {
+                return PlayerDecision::Double;
+            } else {
+                return PlayerDecision::Hit;
+            }
+        default:
+            return PlayerDecision::Stand;  // Default case for hard hands
+    }
+}
+
+PlayerDecision Decision::checkHardHand(int total, int dealerUpCard) {
+    switch (total) {
+        case 17:
+            if (dealerUpCard >= 4 && dealerUpCard <= 6) {
+                return PlayerDecision::Double;
+            } else {
+                return PlayerDecision::Hit;
+            }
+        case 16:
+        case 15:
+        case 14:
+        case 13:
+        case 12:
+            return PlayerDecision::Hit;
+        case 11:
+            return PlayerDecision::Double;
+        case 10:
+        case 9:
+            if (dealerUpCard >= 2 && dealerUpCard <= 6) {
+                return PlayerDecision::Double;
+            } else {
+                return PlayerDecision::Hit;
+            }
+        case 8:
+            if (dealerUpCard == 5 || dealerUpCard == 6) {
+                return PlayerDecision::Double;
+            } else {
+                return PlayerDecision::Hit;
+            }
+        default:
+            return PlayerDecision::Stand;  // Default case for hard hands
+    }
+}
