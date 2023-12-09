@@ -1,3 +1,4 @@
+#pragma once
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
@@ -20,11 +21,14 @@
 #include <player/player.h>
 #include <dealer/dealer.h>
 
+enum class PlayerDecision;
+
 class Utilities {
 public:
-    static void clearLogFile(const std::string& filename);
+    static std::string playerDecisionToString(PlayerDecision decision);
     static std::string cardValueToString(CardValue value);
     static std::string cardSuitToString(CardSuit suit);
+    static void clearLogFile(const std::string& filename);
     static std::shared_ptr<spdlog::logger> logger;
     static std::shared_ptr<spdlog::logger> combined_logger;
     static std::shared_ptr<spdlog::logger> file_logger;

@@ -1,10 +1,16 @@
 #include <utilities/utilities.h>
+#include <decision/decision.h>
 
-void Utilities::clearLogFile(const std::string& filename) {
-    std::ofstream file(filename, std::ofstream::out | std::ofstream::trunc);
-    file.close();
+std::string Utilities::playerDecisionToString(PlayerDecision decision) {
+    switch (decision) {
+        case PlayerDecision::Stand: return "Stand";
+        case PlayerDecision::Hit: return "Hit";
+        case PlayerDecision::Double: return "Double";
+        case PlayerDecision::Split: return "Split";
+        case PlayerDecision::Surrender: return "Surrender";
+        default: return "Unknown";
+    }
 }
-
 
 // Helper function to convert CardValue to string
 std::string Utilities::cardValueToString(CardValue value) {
@@ -35,6 +41,11 @@ std::string Utilities::cardSuitToString(CardSuit suit) {
         case CardSuit::Spades: return "Spades";
         default: return "Unknown";
     }
+}
+
+void Utilities::clearLogFile(const std::string& filename) {
+    std::ofstream file(filename, std::ofstream::out | std::ofstream::trunc);
+    file.close();
 }
 
 std::shared_ptr<spdlog::logger> Utilities::logger = spdlog::stdout_color_mt("logger");  // Change to stdout_color_mt
