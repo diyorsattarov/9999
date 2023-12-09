@@ -18,6 +18,7 @@
 
 #include <card/card.h>
 #include <player/player.h>
+#include <dealer/dealer.h>
 
 class Utilities {
 public:
