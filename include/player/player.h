@@ -17,6 +17,7 @@ public:
     std::vector<Card> getHand() const;
 
     void addCard(const Card& card);
+    void clearHand();
     void printHand() const;
 };
 #endif // PLAYER_H
