@@ -6,12 +6,12 @@
 
 class Dealer {
 private:
-    int dealerId;
     std::vector<Card> hand;
 public:
+    int dealerId;
     Dealer();
-    bool addCard(const Card& card);
-
+    void addCard(const Card& card);
+    void clearHand();
     void printHand() const;
 };
 
