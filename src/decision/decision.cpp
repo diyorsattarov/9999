@@ -35,9 +35,35 @@ bool Decision::containsAce(const std::vector<Card>& hand) {
     return false;
 }
 
+PlayerDecision Decision::checkPair(const std::vector<Card>& playerHand, int dealerUpCard) {
+    CardValue pairValue = playerHand.front().getValue();  // Assuming it's a pair
+    switch (pairValue) {
+        case CardValue::Two:
+        case CardValue::Three:
+        case CardValue::Four:
+        case CardValue::Five:
+        case CardValue::Six:
+        case CardValue::Seven:
+        case CardValue::Eight:
+            return PlayerDecision::Split;
+        case CardValue::Nine:
+        case CardValue::Ten:
+            return PlayerDecision::Stand;
+        case CardValue::Ace:
+            return PlayerDecision::Split;
+        default:
+            return PlayerDecision::Hit;
+    }
+}
+
 PlayerDecision Decision::checkHand(const std::vector<Card>& playerHand, int dealerUpCard) {
     int total = calculateHandTotal(playerHand);
     bool hasAce = containsAce(playerHand);
+
+    if (playerHand.size() == 2 && playerHand.front().getValue() == playerHand.back().getValue()) {
+        // It's a pair
+        return checkPair(playerHand, dealerUpCard);
+    }
 
     if (hasAce) {
         return checkSoftHand(total, dealerUpCard);
@@ -45,6 +71,7 @@ PlayerDecision Decision::checkHand(const std::vector<Card>& playerHand, int deal
         return checkHardHand(total, dealerUpCard);
     }
 }
+
 
 
 PlayerDecision Decision::getDecision(const Player& player, int dealerUpCard) {

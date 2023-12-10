@@ -14,11 +14,12 @@ enum class PlayerDecision {
 
 class Decision {
 public:
+    PlayerDecision checkPair(const std::vector<Card>& playerHand, int dealerUpCard);
+    PlayerDecision checkSoftHand(int total, int dealerUpCard);
+    PlayerDecision checkHardHand(int total, int dealerUpCard);
     PlayerDecision getDecision(const Player& player, int dealerUpCard);
     int calculateHandTotal(const std::vector<Card>& hand);
     bool containsAce(const std::vector<Card>& hand);
-    PlayerDecision checkSoftHand(int total, int dealerUpCard);
-    PlayerDecision checkHardHand(int total, int dealerUpCard);
 private:
     // Define combinations and their corresponding decisions
     std::unordered_map<std::string, PlayerDecision> handDecisions;
