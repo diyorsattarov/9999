@@ -48,9 +48,7 @@ void Game::dealInitialCards() {
 
 void Game::processPlayerDecisions() {
     const std::vector<Player>& players = this->getPlayers();
-    for (const Player& player : players) {
-        player.printHand();
-    }
+    for (const Player& player : players) player.printHand();
 }
 
 void Game::processDealerTurn() {
