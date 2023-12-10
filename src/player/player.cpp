@@ -25,6 +25,4 @@ void Player::printHand() const {
             Utilities::cardValueToString(hand.front().getValue()),
             Utilities::cardValueToString(hand.back().getValue()));
     }
-
-    Utilities::file_logger->info("");  // Add a new line at the end
 }

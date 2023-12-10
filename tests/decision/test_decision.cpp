@@ -59,21 +59,18 @@ TEST_F(DecisionTest, DecisionsTest) {
         }
 
         player3.clearHand();
-        for (int playerCard3 = 0; playerCard3 <= 7; ++playerCard3) {
-            player3.clearHand();
-            player3.addCard(Card(static_cast<CardValue>(playerCard3), CardSuit::Spades));
+        for (int playerCard3 = 0; playerCard3 <= 2; ++playerCard3) {
             for (int playerCard4 = playerCard3+1; playerCard4 <= 7; ++playerCard4) {
+                player3.clearHand();
+                player3.addCard(Card(static_cast<CardValue>(playerCard3), CardSuit::Spades));
                 player3.addCard(Card(static_cast<CardValue>(playerCard4), CardSuit::Spades));
-                player3.printHand();
+                //player3.printHand();
+                Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
+                            Utilities::cardValueToString(player3.getHand().front().getValue()),
+                            Utilities::cardValueToString(player3.getHand().back().getValue()),
+                            Utilities::playerDecisionToString(decision.getDecision(player3, dealerCard)));
+                Utilities::file_logger->info("");
             }
-            //player3.addCard(Card(static_cast<CardValue>(playerCard3+1), CardSuit::Spades));
-            // if (!decision.containsAce(player3.getHand()) && decision.calculateHandTotal(player3.getHand()) == 17) {
-            //     ASSERT_EQ(decision.getDecision(player3, dealerCard), PlayerDecision::Stand);
-            //     Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
-            //                  Utilities::cardValueToString(player3.getHand().front().getValue()),
-            //                  Utilities::cardValueToString(player3.getHand().back().getValue()),
-            //                  Utilities::playerDecisionToString(decision.getDecision(player3, dealerCard)));
-            // }
         }
     }
 }
