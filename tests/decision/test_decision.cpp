@@ -59,8 +59,8 @@ TEST_F(DecisionTest, DecisionsTest) {
         }
 
         player3.clearHand();
-        for (int playerCard3 = 0; playerCard3 <= 2; ++playerCard3) {
-            for (int playerCard4 = playerCard3+1; playerCard4 <= 7; ++playerCard4) {
+        for (int playerCard3 = 0; playerCard3 <= 8; ++playerCard3) {
+            for (int playerCard4 = playerCard3+1; playerCard4 <= 8; ++playerCard4) {
                 player3.clearHand();
                 player3.addCard(Card(static_cast<CardValue>(playerCard3), CardSuit::Spades));
                 player3.addCard(Card(static_cast<CardValue>(playerCard4), CardSuit::Spades));
