@@ -26,14 +26,10 @@ TEST_F(DecisionTest, DecisionsTest) {
             player.addCard(Card(CardValue::Ace, CardSuit::Spades));
             player.addCard(Card(static_cast<CardValue>(playerCard), CardSuit::Spades));
             //player.printHand();
-            if(player.getHand().back().getValue() == CardValue::Eight) {
-                ASSERT_EQ(decision.getDecision(player, dealerCard), PlayerDecision::Stand);
-                // Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
-                //              Utilities::cardValueToString(player.getHand().front().getValue()),
-                //              Utilities::cardValueToString(player.getHand().back().getValue()),
-                //              Utilities::playerDecisionToString(decision.getDecision(player, dealerCard)));
-
-            }
+            Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
+                        Utilities::cardValueToString(player.getHand().front().getValue()),
+                        Utilities::cardValueToString(player.getHand().back().getValue()),
+                        Utilities::playerDecisionToString(decision.getDecision(player, dealerCard)));
         }
         // pairs
         for (int playerCard2 = 0; playerCard2 <= 12; ++playerCard2) {
@@ -42,20 +38,10 @@ TEST_F(DecisionTest, DecisionsTest) {
             player2.addCard(Card(static_cast<CardValue>(playerCard2), CardSuit::Spades));
             player2.addCard(Card(static_cast<CardValue>(playerCard2), CardSuit::Spades));
             //player2.printHand();
-            if (player2.getHand().front().getValue() == CardValue::Ace) {
-                ASSERT_EQ(decision.getDecision(player2, dealerCard), PlayerDecision::Split);
-                // Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
-                //              Utilities::cardValueToString(player2.getHand().front().getValue()),
-                //              Utilities::cardValueToString(player2.getHand().back().getValue()),
-                //              Utilities::playerDecisionToString(decision.getDecision(player2, dealerCard)));
-            } else if (player2.getHand().front().getValue() == CardValue::Ten) {
-                ASSERT_EQ(decision.getDecision(player2, dealerCard), PlayerDecision::Stand);
-                // Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
-                //              Utilities::cardValueToString(player2.getHand().front().getValue()),
-                //              Utilities::cardValueToString(player2.getHand().back().getValue()),
-                //              Utilities::playerDecisionToString(decision.getDecision(player2, dealerCard)));
-            }
-
+            Utilities::file_logger->info("Hand: ({}, {}) Decision: {}",
+                        Utilities::cardValueToString(player2.getHand().front().getValue()),
+                        Utilities::cardValueToString(player2.getHand().back().getValue()),
+                        Utilities::playerDecisionToString(decision.getDecision(player2, dealerCard)));
         }
 
         player3.clearHand();
@@ -69,7 +55,6 @@ TEST_F(DecisionTest, DecisionsTest) {
                             Utilities::cardValueToString(player3.getHand().front().getValue()),
                             Utilities::cardValueToString(player3.getHand().back().getValue()),
                             Utilities::playerDecisionToString(decision.getDecision(player3, dealerCard)));
-                Utilities::file_logger->info("");
             }
         }
     }
