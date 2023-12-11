@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include <thread>
 #include <unordered_map>
 
 #include <gtest/gtest.h>
@@ -20,6 +21,7 @@
 #include <card/card.h>
 #include <player/player.h>
 #include <dealer/dealer.h>
+#include <network/network.h>
 
 enum class PlayerDecision;
 
