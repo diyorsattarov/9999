@@ -23,7 +23,8 @@ add_executable(tests
     #tests/blackjack/test_blackjack.cpp
     #tests/player/test_player.cpp
     #tests/game/test_game.cpp
-    tests/decision/test_decision.cpp
+    #tests/decision/test_decision.cpp
+    tests/network/test_network.cpp
 )
 
 find_package(GTest REQUIRED)

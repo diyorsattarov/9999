@@ -48,3 +48,24 @@ add_library(decision
 )
 
 target_include_directories(decision PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_library(network
+    network/network.cpp
+    ../include/network/network.h
+)
+
+target_include_directories(network PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_library(server
+    network/server.cpp
+    ../include/network/server.h
+)
+
+target_include_directories(server PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_library(client
+    network/client.cpp
+    ../include/network/client.h
+)
+
+target_include_directories(client PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

@@ -49,36 +49,36 @@ void Game::dealInitialCards() {
 void Game::processPlayerDecisions() {
     const std::vector<Player>& players = this->getPlayers();
 
-    // Iterate through each player and process their decision
-    for (const Player& player : players) {
-        player.printHand();  // Display the player's hand
+    // // Iterate through each player and process their decision
+    // for (const Player& player : players) {
+    //     player.printHand();  // Display the player's hand
 
-        // Get the decision for the current player from the Decision class
-        PlayerDecision decision = decision.getDecision(player, /* dealer's up card */);
+    //     // Get the decision for the current player from the Decision class
+    //     PlayerDecision decision = decision.getDecision(player, /* dealer's up card */);
 
-        // Perform actions based on the decision
-        switch (decision) {
-            case PlayerDecision::Stand:
-                // Perform logic for the player choosing to stand
-                break;
-            case PlayerDecision::Hit:
-                // Perform logic for the player choosing to hit
-                break;
-            case PlayerDecision::Double:
-                // Perform logic for the player choosing to double down
-                break;
-            case PlayerDecision::Split:
-                // Perform logic for the player choosing to split
-                break;
-            case PlayerDecision::Surrender:
-                // Perform logic for the player choosing to surrender
-                break;
-            // Add additional cases as needed for your specific game rules
-            default:
-                // Handle any unexpected decision
-                break;
-        }
-    }
+    //     // Perform actions based on the decision
+    //     switch (decision) {
+    //         case PlayerDecision::Stand:
+    //             // Perform logic for the player choosing to stand
+    //             break;
+    //         case PlayerDecision::Hit:
+    //             // Perform logic for the player choosing to hit
+    //             break;
+    //         case PlayerDecision::Double:
+    //             // Perform logic for the player choosing to double down
+    //             break;
+    //         case PlayerDecision::Split:
+    //             // Perform logic for the player choosing to split
+    //             break;
+    //         case PlayerDecision::Surrender:
+    //             // Perform logic for the player choosing to surrender
+    //             break;
+    //         // Add additional cases as needed for your specific game rules
+    //         default:
+    //             // Handle any unexpected decision
+    //             break;
+    //     }
+    // }
 }
 
 
