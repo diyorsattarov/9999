@@ -5,9 +5,6 @@
 class Network {
 public:
     Network();
-    virtual ~Network();
-
-    virtual void start() = 0;
-    virtual void connect(const std::string& ipAddress, int port) = 0;
+    ~Network();
 };
 #endif //NETWORK_H
