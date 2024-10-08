@@ -1,3 +1,4 @@
+#pragma once
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
@@ -9,6 +10,7 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include <thread>
 #include <unordered_map>
 
 #include <gtest/gtest.h>
@@ -19,12 +21,16 @@
 #include <card/card.h>
 #include <player/player.h>
 #include <dealer/dealer.h>
+#include <network/network.h>
+
+enum class PlayerDecision;
 
 class Utilities {
 public:
-    static void clearLogFile(const std::string& filename);
+    static std::string playerDecisionToString(PlayerDecision decision);
     static std::string cardValueToString(CardValue value);
     static std::string cardSuitToString(CardSuit suit);
+    static void clearLogFile(const std::string& filename);
     static std::shared_ptr<spdlog::logger> logger;
     static std::shared_ptr<spdlog::logger> combined_logger;
     static std::shared_ptr<spdlog::logger> file_logger;

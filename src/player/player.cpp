@@ -1,5 +1,4 @@
 #include <player/player.h>
-#include <utilities/utilities.h>
 
 Player::Player(int pId) : playerId(pId), balance(0) {}
 
@@ -22,14 +21,8 @@ void Player::printHand() const {
     if (hand.empty()) {
         Utilities::file_logger->info("Player {}'s Hand is empty.", playerId);
     } else {
-        Utilities::file_logger->info("Player {}'s Hand:", playerId);
-
-        for (const auto& card : hand) {
-            Utilities::file_logger->info("{} of {}", 
-                Utilities::cardValueToString(card.getValue()), Utilities::cardSuitToString(card.getSuit())
-            );
-        }
+        Utilities::file_logger->info("Player {}'s Hand: ({}, {})", playerId,
+            Utilities::cardValueToString(hand.front().getValue()),
+            Utilities::cardValueToString(hand.back().getValue()));
     }
-
-    Utilities::file_logger->info("");  // Add a new line at the end
 }

@@ -12,13 +12,7 @@ void Dealer::clearHand() {
 
 void Dealer::printHand() const {
     // Use combined_logger for logging to both console and file
-    Utilities::file_logger->info("Dealer {}'s Hand:", dealerId);
+    Utilities::file_logger->info("Dealer {}'s Hand: ({})", dealerId, Utilities::cardValueToString(hand.front().getValue()));
 
-    for (const auto& card : hand) {
-        Utilities::file_logger->info("{} of {}", 
-            Utilities::cardValueToString(card.getValue()), Utilities::cardSuitToString(card.getSuit())
-        );
-    }
-
-    Utilities::file_logger->info("");  // Add a new line at the end
+    //Utilities::file_logger->info("");  // Add a new line at the end
 }
